@@ -112,7 +112,10 @@ class Solution:
             message = message.strip()
             stringer = ""
             for i in range(0, len(message)):
-                stringer += MORSE_CODE_DICT[message[i]] + " "
+                if message[i] != " ":
+                    stringer += MORSE_CODE_DICT[message[i]] + " "
+                else:
+                    stringer += MORSE_CODE_DICT[message[i]]
             stringer = stringer.strip()
             return stringer
             
