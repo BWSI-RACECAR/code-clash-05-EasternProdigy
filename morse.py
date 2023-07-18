@@ -108,18 +108,15 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
 
 class Solution:
     def encrypt(self, message):
-            message = message.upper()
-            message = message.strip()
+            message = message.upper().strip()
             stringer = ""
-            for i in range(0, len(message)):
-                if message[i] != " ":
-                    stringer += MORSE_CODE_DICT[message[i]] + " "
+            for i in message:
+                if i == " ":
+                    stringer += " "
                 else:
-                    stringer += MORSE_CODE_DICT[message[i]]
-            stringer = stringer.strip()
-            return stringer
+                    stringer += MORSE_CODE_DICT[i] + " "
+            return stringer.strip()
             
-                 
 
 def main():
      str1=input()
